@@ -1,0 +1,608 @@
+\documentclass[3p,11pt]{elsarticle}
+%\usepackage{refcheck}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm,comment}
+
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+\def\bibsection{\section*{References}}
+
+\makeatletter
+\def\ps@pprintTitle{%
+ \let\@oddhead\@empty
+ \let\@evenhead\@empty
+ \def\@oddfoot{\centerline{\thepage}}%
+ \let\@evenfoot\@oddfoot}
+\makeatother
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+\newcommand{\bfA}{\mathbf{A}}
+\newcommand{\bfB}{\mathbf{B}}
+\newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bfE}{\mathbf{E}}
+\newcommand{\bfF}{\mathbf{F}}
+\newcommand{\bfg}{\mathbf{g}}
+\newcommand{\bfG}{\mathbf{G}}
+\newcommand{\bfI}{\mathbf{I}}
+\newcommand{\bfJ}{\mathbf{J}}
+\newcommand{\bfM}{\mathbf{M}}
+\newcommand{\bfP}{\mathbf{P}}
+\newcommand{\bfU}{\mathbf{U}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfX}{\mathbf{X}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfY}{\mathbf{Y}}
+\newcommand{\bfZ}{\mathbf{Z}}
+\newcommand{\bfz}{\mathbf{z}}
+
+\newcommand{\bfone}{\boldsymbol{1}}
+\newcommand{\bfzero}{\boldsymbol{0}}
+\newcommand{\bfdelta}{\boldsymbol{\delta}}
+\newcommand{\bfphi}{\boldsymbol{\varphi}}
+\newcommand{\bfPhi}{\boldsymbol{\Phi}}
+\newcommand{\bfpsi}{\boldsymbol{\psi}}
+\newcommand{\bfPsi}{\boldsymbol{\Psi}}
+
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calJ}{\mathcal{J}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\calY}{\mathcal{Y}}
+
+\newcommand{\rmc}{\mathrm{c}}
+\newcommand{\rmi}{\mathrm{i}}
+\newcommand{\rmO}{\mathrm{O}}
+\newcommand{\rmT}{\mathrm{T}}
+
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\opt}{{\operatorname{opt}}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\BIBD}{{\operatorname{BIBD}}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\Spark}{{\operatorname{spark}}}
+\newcommand{\coh}{{\operatorname{coh}}}
+
+\newcommand{\Fro}{\mathrm{Fro}}
+
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\bigparen}[1]{\bigl({#1}\bigr)}
+\newcommand{\bracket}[1]{[{#1}]}
+\newcommand{\bigbracket}[1]{\bigl[{#1}\bigr]}
+\newcommand{\set}[1]{\{{#1}\}}
+\newcommand{\bigset}[1]{\bigl\{{#1}\bigr\}}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\biggnorm}[1]{\biggl\|{#1}\biggr\|}
+\newcommand{\ip}[2]{\langle{#1},{#2}\rangle}
+
+\setlength{\arraycolsep}{2pt}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\begin{document}
+\begin{frontmatter}
+\title{Title}
+
+\author{Matthew Fickus}
+\ead{email}
+\author{Courtney Schmitt}
+
+\address{Department of Mathematics and Statistics, Air Force Institute of Technology, Wright-Patterson AFB, OH 45433}
+
+\begin{abstract}
+
+\end{abstract}
+
+%\begin{keyword}
+%equiangular \sep tight \sep frame  \MSC[2010] 42C15
+%\end{keyword}
+\end{frontmatter}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{equation}
+	\label{eq:Coherence}
+	\coh(\{\bfx_n\}_{n\in\calN})=\max_{n\not=n'}\tfrac{\abs{\ip{\bfx_n}{\bfx_{n'}}}}{\norm{\bfx_n}\norm{\bfx_{n'}}}
+\end{equation}
+
+\begin{equation}
+\label{eq:Wlech Bound}
+    \sqrt{\tfrac{N-D}{D(N-1)}}\leq\max_{n\not=n'}\abs{\ip{\bfx_n}{\bfx_{n'}}}
+\end{equation}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Synthesis, Analysis, Gram, Frame, Tightness, Naimark Complement}
+
+Let $\bbF$ be either $\bbR$ or $\bbC.$ In general, for an indexing set $\calN$ of cardinality $N,$ let $\bbF^\calN=\{\bfx:\calN\to\bbF\}$ be the Hilbert space whose inner product is taken to be conjugate linear in the first argument. Also for an indexing set $\calM$ of cardinality $M,$ let $\bbF^{\calM\times\calN}=\{\bfA:\calM\times\calN\to\bbF\}$ be the space of all matrices whose rows and columns are indexed by $\calM$ and $\calN,$ respectively, equipped with the Frobenius (Hilbert-Schmidt) inner product, $\ip{\bfA}{\bfB}_\Fro:=\Tr(\bfA^*\bfB).$ Any such matrix represents a linear operator from $\bbF^\calN$ to $\bbF^\calM.$ 
+
+The \textit{synthesis operator} of a finite sequence of vectors $\{\bfx_n\}_{n\in\calN}$ in a $D$-dimension Hilbert space $\bbH$ is $\bfX:\bbF^\calN\to\bbH,$ $\bfX\bfy:=\sum_{n\in\calN}\bfy(n)\bfx_n.$ When $\bbH=\bbF^D$ and $\calN=[N]:=\{1,...,N\},$ $\bfX$ can be thought of as a $D\times N$ matrix whose $n$th column is $\bfx_n.$ Its adjoint, $\bfX^*:\bbH\to\bbF^\calN,$ satisfies $(\bfX^*\bfz)(n)=\ip{\bfx_n}{\bfz}$ for all $n\in\calN,$ and is called the \textit{analysis operator}. In the special case where $\bbH=\bbF^D$ and $\calN=[N],$ $\bfX^*$ is the $N\times D$ matrix whose $n$th row is the conjugate transpose of $\bfx_n.$ Composing these operators leads to the \textit{frame operator} $\bfX\bfX^*:\bbH\to\bbH,$ $\bfX\bfX^*\bfz=\sum_{n\in\calN}\ip{\bfx_n}{\bfz}\bfx_n$ and the $\calN\times\calN$ \textit{Gram matrix} $\bfX^*\bfX:\bbF^\calN\to\bbF^\calN$ whose $(n,n')$th entry is $(\bfX^*\bfX)(n,n')=\ip{\bfx_n}{\bfx_{n'}}.$
+
+We also view each vector as its own synthesis operator $\bfx_n:\bbF\to\bbH,$ $\bfx_n(y)=y\bfx_n.$ Its adjoint is the linear functional $\bfx_n^*:\bbH\to\bbF,$ $\bfx_n^*\bfz=\ip{\bfx_n}{\bfz}.$ Thus the frame operator of $\{\bfx_n\}_{n\in\calN}$ is \begin{equation}
+    \bfX\bfX^*=\sum_{n\in\calN}\bfx_n^{}\bfx_n^*.
+\end{equation} 
+In the special case where $\bfX\bfX^*=A\bfI$ for some $A>0,$ we say $\{\bfx_n\}_{n\in\calN}$ is an \textit{$A$-tight frame} for $\bbH.$ When the vectors $\{\bfx_n\}_{n\in\calN}$ are regarded as members of some (larger) Hilbert space $\bbK$ which contains $\bbH=\Span\{\bfx_n\}_{n\in\calN}$ as a (proper) subspace, we say that $\{\bfx_n\}_{n\in\calN}$ is a \textit{tight frame for its span}; elsewhere in the literature, such sequences are sometimes called ``tight frame sequences." Here the analysis operator $\bfX^*:\bbH\to\bbF^\calN$ extends to an operator $\bfX^*:\bbK\to\bbF^\calN$ and $\{\bfx_n\}_{n\in\calN}$ is a tight frame for its span precisely when $\bfX\bfX^*\bfy=A\bfy$ for all $\bfy\in\bbH=\Span(\{\bfx_n\}_{n\in\calN})=C(\bfX).$  As shown in \cite{FickusJKM18}, this is equivalent to having $\bfX\bfX^*\bfX=A\bfX$ or equivalently $(\bfX\bfX^*)^2=A\bfX\bfX^*$ or equivalently $(\bfX^*\bfX)^2=A\bfX^*\bfX.$
+
+Given an $A-$tight frame $\{\bfx_n\}_{n\in\calN}$ for some $D-$dimensional Hilbert space $\bbH,$ a \textit{Naimark complement} of it is any $\{\bfy_n\}_{n\in\calN}$ with synthesis operator $\bfY$ such that $\bfX^*\bfX+\bfY^*\bfY=A\bfI.$ Since $\{\bfx_n\}_{n\in\calN}$ is a tight frame for $\bbH,$ $\bfX^*\bfX$ has eigenvalues $A$ and $0$ with multiplicities $D$ and $N-D,$ respectively. Consequently $\bfY^*\bfY=A\bfI-\bfX^*\bfX$ has eigenvalues $A$ and $0$ with multiplicities $N-D$ and $D,$ respectively, meaning that $\{\bfy_n\}_{n\in\calN}$ is a tight frame for its $(N-D)$-dimensional span. Being defined in terms of their Gram matrices, Naimark complements are only unique up to unitary transformations. When $\bbH=\bbF^D,$ $\calN=[N],$ and $\bfX$ is regarded as a $D\times N$ matrix, a natural way to construct a Naimark complement $\{\bfy_n\}_{n\in\calN}$ is as the columns of any $(N-D)\times N$ matrix $\bfY$ whose rows, together with the rows of $\bfX,$ form an equal-norm orthogonal basis for $\bbF^\calN.$
+
+\subsection{ECTFF,EITFF}
+
+Now let $\{\calU_n\}_{n\in\calN}$ be $M$-dimensional subspaces of a $D$-dimensional Hilbert space $\bbH.$ For each $n\in\calN$ let $\bfX_n$ be the synthesis operator of an orthonormal basis $\{\bfx_{n,m}\}_{m\in\calM}$ for $\calU_n.$ Since $\{\bfx_{n,m}\}_{m\in\calM}$ is an orthonormal basis for $\calU_n$, $\bfX_n^*\bfX_n^{}=\bfI$ and $\bfP_n^{}=\bfX_n^{}\bfX_n^*$ is the orthogonal projection operator onto $\calU_n.$ Here we can also consider the synthesis operator $\bfX$ of the concatenation (union) $\{\bfx_{n,m}\}_{n\in\calN,m\in\calM}$ of all of these orthonormal bases. In the special case where $\bbH=\bbF^D,$ $\calN=[N],$ and $\calM=[M]$  the operator $\bfX$ can be regarded as a $1\times N$ block matrix whose $n$th block is the $D\times M$ matrix $\bfX_n,$ i.e. $\bfX=\left[\begin{array}{ccc}\bfX_1 & \cdots & \bfX_N \end{array}\right]$ and $\bfX_n=\left[\begin{array}{ccc}\bfx_{n,1} & \cdots & \bfx_{n,M} \end{array}\right].$ Because of this, in general we regard the $(\calN\times\calM)\times(\calN\times\calM)$ Gram matrix $\bfX^*\bfX$ as an $\calN\times\calN$ block matrix whose $(n,n')$th block is the $\calM\times\calM$ \textit{cross-Gram matrix}, $\bfX_n^*\bfX_{n'}^{}$. The \textit{fusion frame operator} of $\{\calU_n\}_{n\in\calN}$ is defined to be the sum of the orthogonal projection operators onto these subspaces. This equates to the frame operator of $\{\bfx_{n,m}\}_{n\in\calN,m\in\calM}:$ 
+\begin{equation}
+    \bfX\bfX^*=\sum_{n\in\calN}\sum_{m\in\calM}\bfx_{n,m}^{}\bfx_{n,m}^*=\sum_{n\in\calN}\bfX_n^{}\bfX_n^*=\sum_{n\in\calN}\bfP_n.
+\end{equation}
+
+The subspaces $\{\calU_n\}_{n\in\calN}$ are said to form a \textit{tight fusion frame} for $\bbH$ if $\bfX\bfX^*=A\bfI$ for some scalar $A>0.$ In this case $A$ is necessarily $\tfrac{MN}{D}$ since 
+\begin{equation*}
+    AD=\Tr\left(A\bfI\right)=\Tr\left(\bfX\bfX^*\right)=\Tr(\sum_{n\in\calN}\bfP_n)=\sum_{n\in\calN}\Tr\left(\bfP_n\right)=MN
+\end{equation*}
+In the special case where $M=1,$ every tight fusion frame arises from a \textit{unit norm tight frame} $\{\bfx_n\}_{n\in\calN},$ that is, a tight frame consisting of unit-norm vectors. Moreover, in general for any $M$-dimensional subspaces $\{\calU_n\}_{n\in\calN}$ of $\bbH,$ a straightforward computation reveals
+\begin{align}
+\label{eq:1st ECTFF inequality}
+0&\leq\norm{\sum_{n\in\calN}\bfP_n-\tfrac{MN}{D}\bfI}_\Fro^2\\
+&=\sum_{n\in\calN}\sum_{\substack{n'\in\calN\\n'\not=n}}\norm{\bfX_n^*\bfX_{n'}^{}}_\Fro^2-MN\left(\tfrac{MN}{D}-1\right)\nonumber\\
+&\leq N(N-1)\max_{n\not=n'}\norm{\bfX_n^*\bfX_{n'}^{}}^2_\Fro-MN\left(\tfrac{MN}{D}-1\right).\label{eq:2nd ECTFF inequality}
+\end{align}
+Moreover, equality holds in \eqref{eq:1st ECTFF inequality} if and only if $\{\calU_n\}_{n\in\calN}$ is a tight fusion frame, and holds in \eqref{eq:2nd ECTFF inequality} if and only if $\norm{\bfX_n^*\bfX_{n'}^{}}_\Fro$ is constant over all $n\not=n'.$ Rearranging this inequality thus gives
+\begin{equation}
+\label{eq:ECTFF Bound}
+    \sqrt{\tfrac{M(MN-D)}{D(N-1)}}\leq\max_{n\not=n'}\norm{\bfX_n^*\bfX_{n'}^{}}_\Fro
+\end{equation} 
+where equality holds if and only if both \eqref{eq:1st ECTFF inequality} and \eqref{eq:2nd ECTFF inequality} hold, or equivalently when  $\{\calU_n\}_{n\in\calN}$ is an \textit{equi-chordal tight fusion frame} (ECTFF) for $\bbH.$ That is, a tight fusion frame for $\bbH$ with the property that the \textit{chordal distance} between any two subspaces $\calU_n$ and $\calU_{n'}$ defined as \begin{equation*}
+    \dist_\rmc(\{\calU_n\}_{n\in\calN})=\smash{\tfrac{1}{\sqrt{2}}\norm{\bfP_n-\bfP_{n'}}_\Fro}=\sqrt{M-\norm{\bfX_n^*\bfX_{n'}^{}}^2_\Fro}
+\end{equation*}
+is constant over all $n\not=n'.$ From \eqref{eq:ECTFF Bound}, we see that any ECTFF yields an optimal packing of subspaces with respect to the chordal distance, that is, an arrangement of $N$ subspaces of $\bbH,$ each of dimension $M,$ whose minimum pairwise-chordal distance is maximal, satisfying the so-called simplex bound of \cite{ConwayHS96}. 
+
+Continuing the above string of inequalities, $$\tfrac{M(MN-D)}{D(N-1)}\leq\max_{n\not=n'}\norm{\bfX_n^*\bfX_{n'}^{}}_\Fro^2\leq M\norm{\bfX_n^*\bfX_{n'}^{}}_2^2$$ where $\norm{\bfA}_2$ is the standard (induced) 2-norm of $\bfA,$ namely its largest singular value. Thus, 
+\begin{equation}
+\label{eq:Simplex Bound}
+    \sqrt{\tfrac{MN-D}{D(N-1)}}\leq\max_{n\not=n'}\norm{\bfX_n^*\bfX_{n'}^{}}_2
+\end{equation}
+where equality holds if and only if $\{\calU_n\}_{n=1}^N$ is an \textit{equi-isoclinic tight fusion frame} (EITFF), that is, an ECTFF such that for all $n\not=n',$ $\bfX_n^*\bfX_{n'}^{}$ has constant singular values. This occurs if and only if there exists some $\sigma\geq 0$ such that $\bfX_{n'}^*\bfP_n^{}\bfX_{n'}^{}=\sigma^2\bfI$ for all $n\not=n'.$ Conjugating by $\bfX_{n'}$ gives \begin{equation}\label{eq:Projection Formula}
+    \bfP_{n'}^{}\bfP_n^{}\bfP_{n'}^{}=\bfX_{n'}^{}\bfX_{n'}^*\bfP_n^{}\bfX_{n'}^{}\bfX_{n'}^*=\sigma^2\bfX_{n'}^{}\bfX_{n'}^*=\sigma^2\bfP_{n'}^{}.
+\end{equation} Conversely, conjugating \eqref{eq:Projection Formula} by $\bfX_{n'}^*$ yields $\bfX_{n'}^*\bfP_n^{}\bfX_{n'}^{}=\sigma^2\bfI.$ That is, $\{\calU_n\}_{n=1}^N$ is an EITFF if and only if it is a EITFF and there exists $\sigma\geq0$ such that $\bfP_{n'}\bfP_n\bfP_{n'}=\sigma^2\bfP_{n'}$ for all $n\not= n'.$
+
+A finite sequence of nonzero, equal norm vectors $\{\bfx_n\}_{n\in\calN}$ is said to be \textit{equiangular} if $\abs{\ip{\bfx_n}{\bfx_{n'}}}$ is constant over all $n\not=n'.$ In the case that the subspaces $\{\calU_n\}_{n\in\calN}$ are of dimension one, i.e. $M=1$, ECTFFs and EITFFs reduce to \textit{equiangular tight frames} (ETFs): choosing a unit norm vector from each of the subspaces produces $\{\bfx_n\}_{n\in\calN}$ that is both a equal norm tight frame and equiangular. In this case, \eqref{eq:ECTFF Bound} and \eqref{eq:Simplex Bound} both reduce to the Welch bound \eqref{eq:Wlech Bound}, where equality holds if and only if $\{\bfx_n\}_{n\in\calN}$ is an ETF. This corresponds to $\{\bfx_n\}_{n\in\calN}$ having minimal coherence \eqref{eq:Coherence}. It is important to note that the Naimark complement of an ETF is itself an ETF since $\bfY^*\bfY=A\bfI-\bfX^*\bfX$ and so $\norm{\bfy_n}^2=A-\norm{\bfx_n}^2,$ implying that $\{\bfy_n\}_{n\in\calN}$ is equal norm, and $\ip{\bfy_n}{\bfy_{n'}}=-\ip{\bfx_n}{\bfx_{n'}},$ implying that $\{\bfy_n\}_{n\in\calN}$ is equiangular.
+
+\subsection{Quantum information theory problem}
+
+A lot of the work in this field is motivated by the following quantum information theory problem: Design unit vectors $\{\bfx_n\}_{n\in\calN}$ in $\bbH,$ a $D-$dimensional Hilbert space, so that 
+\begin{equation}
+\label{eq: QIT Problem}
+    \text{every self adjoint operator }\bfA:\bbH\to\bbH \text{ can be recovered from }\{\bfx_n^*\bfA\bfx_n^{}\}_{n\in\calN.}
+\end{equation}
+Since $\{\bfA:\bbH\to\bbH\mid\bfA^*=\bfA\}$ is a real Hilbert space under the inner product $\ip{\bfA}{\bfB}_\Fro=\Tr(\bfA\bfB)=\sum_{d=1}^D\ip{\bfu_d}{\bfA\bfB\bfu_d}$ where $\{\bfu_d\}_{d=1}^D$ is any orthonormal basis for $\bbH,$ $\{\bfx_n^*\bfA\bfx_n^{}\}_{n\in\calN}$ equates to measurements of the form 
+\begin{equation*}
+    \bfx_n^*\bfA\bfx_n^{}=\Tr(\bfx_n^*\bfA\bfx_n^{})=\Tr(\bfx_n^{}\bfx_n^*\bfA)=\ip{\bfP_n}{\bfA}_\Fro,
+\end{equation*}
+where $\bfP_x=\bfx_n^{}\bfx_n^*$ is the rank one projection onto the line spanned by $\bfx_n.$ Thus, this problem \eqref{eq: QIT Problem} reduces to designing vectors $\{\bfx_n\}_{n\in\calN}$ so that $\{\bfP_n\}_{n\in\calN}$ spans the space $\{\bfA:\bbH\to\bbH\mid\bfA=\bfA^*\}.$ This space has dimension $D^2$ when the underlying field $\bbF$ is $\bbC$ and has dimension $\binom{D+1}{2}$ when $\bbF$ is $\bbR.$ The dimension of $\Span(\{\bfP_n\}_{n\in\calN})$ is the same as the rank of its Gram matrix. Moreover, since
+\begin{equation}
+\label{eq: IP of P_n}
+    \ip{\bfP_n}{\bfP_{n'}}_\Fro=\Tr(\bfP_n\bfP_{n'})=\Tr(\bfx_n^{}\bfx_{n'}^*\bfx_{n'}^{}\bfx_{n}^*)=\ip{\bfx_{n'}}{\bfx_n}\ip{\bfx_n}{\bfx_{n'}}=\abs{\ip{\bfx_n}{\bfx_{n'}}}^2
+\end{equation}
+for all $n\not=n',$ the Gram matrix of $\{\bfP_n\}_{n\in\calN}$ is the pointwise modulus squared $\abs{\bfX^*\bfX}^2$ of the Gram matrix $\bfX^*\bfX$ of $\{\bfx_n\}_{n\in\calN}.$ In summary, we see that for any $\{\bfx_n\}_{n\in\calN}$ in $\bbH,$
+\begin{equation}
+\label{eq: QIT Problem Property}
+\rank\left(\abs{\bfX^*\bfX}^2\right)\leq\left\{\begin{array}{lc}
+D^2 & \bbF=\bbC \\
+\tbinom{D+1}{2} & \bbF=\bbR
+\end{array}\right.
+\end{equation}
+and further, $\{\bfx_n\}_{n\in\calN}$ achieves equality in \eqref{eq: QIT Problem Property} if and only if it satisfies property \eqref{eq: QIT Problem}. 
+
+\subsubsection{Mutually unbiased bases}
+One way to try to achieve \eqref{eq: QIT Problem} is to construct \textit{maximal mutually unbiased bases} (MUBs) for $\bbH.$ To elaborate, for any $v=1,...,V,$ let $\{\bfu_{v,d}\}_{d=1}^D$ be an orthonormal basis for $\bbH$ and let $\bfU_v$ be its (unitary) synthesis operator. The union $\{\bfu_{v,d}\}_{v=1,}^V\,_{d=1}^D$ of these bases is a tight frame for $\bbH$: denoting its synthesis operator by $\bfU$ we have $\smash{\bfU\bfU^*=\sum_{v=1}^V\bfU_v^{}\bfU_v^*=V\bfI}$ and so $V^2D=\norm{\bfU\bfU^*}^2_\Fro=\norm{\bfU^*\bfU}^2_\Fro.$ Then expanding $\norm{\bfU^*\bfU}_\Fro^2$ by definition and bounding this quantity using the coherence of $\{\bfu_{v,d}\}_{v=1,}^V\,_{d=1}^D$ gives
+\begin{align*}
+    V^2D&=\sum_{v=1}^V\sum_{v'=1}^V\norm{\bfU_v^*\bfU_{v'}^{}}^2_\Fro\\
+    &=VD+\sum_{v=1}^V\sum_{\substack{v'=1\\v'\not=v}}^V\sum_{d=1}^D\sum_{d'=1}^D\abs{\ip{\bfu_{v,d}}{\bfu_{v',d'}}}^2\\
+    &\leq VD+V(V-1)D^2\coh\left(\{\bfu_{v,d}\}_{v=1,}^V\,_{d=1}^D\right)
+\end{align*}
+Therefore, the coherence of any union of orthonormal bases for $\bbH$ is bounded below by $\smash{\tfrac{1}{\sqrt{D}}}$ with $\abs{\ip{\bfu_{v,d}}{\bfu_{v',d'}}}=\tfrac{1}{\sqrt{D}}$ for all $v\not=v'$ if and only if these bases are \textit{mutually unbiased.}
+
+Letting $\bfJ$ be an all ones matrix, if $\{\bfu_{v,d}\}_{v=1,}^V\,_{d=1}^D$ are MUBs for $\bbH$ with synthesis operator $\bfU$ then $\abs{\bfU^*\bfU}^2=\bfI_{VD}+\tfrac{1}{D}\left[\left(\bfJ_V-\bfI_V\right)\otimes\bfJ_D\right].$ Thus, $\abs{\bfU^*\bfU}^2$ has eigenvalues $1,$ $V,$ and $0$ with multiplicities $(D-1)V,$ $1,$ and $V-1,$ respectively. Therefore, by \eqref{eq: QIT Problem Property} when $\bbF=\bbC,$ $(D-1)V+1\leq D^2,$ i.e. $V\leq D+1;$ when $\bbF=\bbR,$ $(D-1)V+1\leq\tbinom{D+1}{2},$ i.e. $V\leq\tfrac{D+2}{2}.$ When equality is acheived we say the MUBs are \textit{maximal}, achieving equality in \eqref{eq: QIT Problem Property} and so satisfying \eqref{eq: QIT Problem}. Maximal MUBs are know to exist when the dimension $D$ is a prime power, however, there existence is open for dimensions as small as 6 for example \cite{Bengtsson06}. 
+
+\subsubsection{Gerzon's Bound}
+Note that when $\bbF=\bbC$ maximal MUBs consist of $D(D+1)$ vectors, however, by \eqref{eq: QIT Problem Property}, the smallest possible $N$ for which it is possible that $\{\bfx_n\}_{n\in\calN}$ satisfies \eqref{eq: QIT Problem} is $D^2.$ Since it is ideal that these vectors have small coherence, we would like to construct, if possible, $D^2$ vectors in $\bbH$ that form an ETF for $\bbH$. 
+
+Gerzon's bound gives an upper bound on the number of equiangular vectors in a given Hilbert space. Indeed, when $\{\bfx_n\}_{n\in\calN}$ is equiangular but not collinear, there exists some $w\in[0,1),$ such that for all $n\not=n',$ $\abs{\ip{\bfx_n}{\bfx_{n'}}}=w.$ Then by \eqref{eq: IP of P_n}, $\ip{\bfP_n}{\bfP_{n'}}_\Fro=\abs{\ip{\bfx_n}{\bfx_{n'}}}^2=w^2\not=1.$ Therefore, the Gram matrix of $\{\bfP_n\}_{n\in\calN}$ is given by $\abs{\bfX^*\bfX}^2=(1-w^2)\bfI+w^2\bfJ$ which has eigenvalues $Nw^2+1-w^2$ and $1-w^2$ with multiplicity $1$ and $N-1$, respectively. Thus by \eqref{eq: QIT Problem Property} $N\leq D^2$ when $\bbF=\bbC$ and $N\leq\smash{\binom{D+1}{2}}$ when $\bbF=\bbR.$ 
+
+Therefore, another way to try to satisfy \eqref{eq: QIT Problem} is to construct \textit{maximal ETFs} for $\bbH.$ That is construct an ETF $\{\bfx_n\}_{n\in\calN}$ for $\bbH$ where $N=D^2$ or $N=\tbinom{D+1}{2}$ for $\bbF=\bbC$ or $\bbF=\bbR$ respectively. Such constructions are also known as symmetric, informationally complete, positive operator-valued measures (SIC-POVMs). Zauner's conjecture conjectures that maximal ETFs exists for any dimension $D$ \cite{Zauner99}. 
+
+Maximal ETFs have been proved to exist for $D$ being 1-21, 24, 28, 30, 31, 35, 37, 39, 43, 48, 124, and 323 \cite{Knopp}. For many other dimensions numerical constructions have been shown to satisfy the properties of an ETF to within machine precision. For a maximal ETF to be real, $D$ must be two less that an odd square, i.e. $D\in\{3,7,23,47,79,...\}$ \cite{FickusM16}. It is known that maximal real ETFs exists for $D$ being  3, 7, or 28 and does no exist for $D=47$ \cite{BannaiMV05, FickusM16}.
+
+\subsubsection{Orthoplex bound}
+When $N$ exceeds Gerzon's bound, equiangularity is not attainable and so neither is the Welch bound \eqref{eq:Wlech Bound}. In this case, a new bound for minimal coherence can be obtained. For unit norm vector $\{\bfx_n\}_{n\in\calN},$ the corresponding projections $\{\bfP_n\}_{n\in\calN}$ can be transformed to be traceless and therefore lie in the orthogonal complement of $\bfI.$ Then normalizing gives the operators
+\begin{equation}
+    \label{eq:Lifted operators}
+    \hat{\bfP}_n=\sqrt{\tfrac{D}{D-1}}(\bfP_n-\tfrac{1}{D}\bfI).
+\end{equation} 
+Further note that $\ip{\hat{\bfP}_n}{\hat{\bfP}_{n'}}_\Fro=\tfrac{D}{D-1}\left(\abs{\ip{\bfx_n}{\bfx_{n'}}}^2-\tfrac{1}{D}\right)$ since 
+\begin{equation}
+\label{eq: Unnormalized lifting inner products}
+    \ip{\bfP_n-\tfrac{1}{D}\bfI}{\bfP_{n'}-\tfrac{1}{D}\bfI}_\Fro=\Tr\left[(\bfP_n-\tfrac{1}{D}\bfI)(\bfP_{n'}-\tfrac{1}{D}\bfI)\right]=\abs{\ip{\bfx_n}{\bfx_{n'}}}^2-\tfrac{1}{D}.
+\end{equation} 
+
+One can show \cite{Chapman10} that given any $D+2$ vectors in a real Hilbert space of dimension $D,$ that at least two vectors have a nonnegative inner product with each other. Applying this to $\{\hat{\bfP}_n\}_{n\in\calN}$ as defined in \eqref{eq:Lifted operators} gives that 
+\begin{equation*}
+    0\leq\max_{n\not=n'}\ip{\hat{\bfP}_n}{\hat{\bfP}_{n'}}_\Fro=\max_{n\not=n'}\tfrac{D}{D-1}(\abs{\ip{\bfx_n}{\bfx_{n'}}_\Fro}^2-\tfrac{1}{D}).
+\end{equation*}
+Rearranging gives the \textit{orthoplex bound} which takes over as the bound on coherence from the Welch bound when $N>D^2$ or $N>\binom{D+1}{2}$ for $\bbF=\bbC$ or $\bbF=\bbR,$ respectively:
+\begin{equation}
+    \label{eq:orthoplex bound}
+    \tfrac{1}{\sqrt{D}}\leq\max_{n\not=n'}\abs{\ip{\bfx_n}{\bfx_{n'}}}
+\end{equation}
+MUBs achieve the orthoplex bound further confirming the previous claim that maximal MUBs achieve the minimal coherence of all unions of orthonormal bases.
+
+\subsection{Harmonic analysis on finite abelian groups and difference sets}
+
+A \textit{character} on a finite abelian group $\calG$ is a homomorphism $\gamma:G\to\bbT=\{z\in\bbC:\abs{z}=1\}.$ The set of all characters of $\calG,$ denoted $\hat{\calG},$ is called the \textit{(Pontryagin) dual} of $\calG$ and is itself a group under entrywise multiplication. In fact, it is well know that $\hat{\calG}$ is isomorphic to $\calG$ and moreover that $\smash{\{\gamma\}_{\gamma\in\hat{\calG}}}$ is an equal-norm orthogonal basis for $\bbC^\calG.$ Letting $N$ be the order of $\calG,$ the $N\times N$ \textit{character table,} $\bfF,$ of $\calG$ is the $\calG\times\hat{\calG}$ matrix whose $(g,\gamma)$th entry is $\bfF(g,\gamma):=\gamma(g).$ That is $\bfF$ is the synthesis operator of $\{\gamma\}_{\gamma\in\hat{\calG}}.$ Its analysis operator is the \textit{discrete Fourier transform} (DFT) on $\calG:$
+\begin{equation}\label{eq:DFT}
+    \bfF^*:\bbC^\calG\to\bbC^{\hat{\calG}} \qquad (\bfF^*\bfx)(\gamma)=\ip{\gamma}{\bfx}.
+\end{equation}
+Note that for any $\gamma\in\hat{\calG}$ and any $g\in\calG,$ $\gamma(-g)=\gamma^{-1}(g)=[\gamma(g)]^{-1}=\overline{\gamma(g)}.$ For any subgroup $\calH$ of $\calG,$ its \textit{annihilator} is $\calH^\perp=\{\gamma\in\hat{\calG}:\gamma(h)=1,~\forall h\in\calH\}.$ It is well known that $\calH^\perp$ is a subgroup of $\hat{\calG},$ and moreover that $\varphi:\calH^\perp\to\smash{(\calG/\calH)\hat{\,}}$, $[\varphi(\gamma)](g+\calH):=\gamma(g)$ is a well-defined isomorphism.
+
+A subset $\calD$ of a finite abelian group $\calG$ is a \textit{difference set} for $\calG$ if the cardinality of $\{(d,d')\in\calG: g=d-d'\}$ is constant over all nonzero $g\in\calG.$ Conceptually, this means that the difference table for $\calD$ would have zeros on the diagonal, and every nonzero element of $\calG$ would occur the same number of times on the off diagonal. In particular, since there are $D(D-1)$ off diagonal entries and $N-1$ nonzero elements of $\calG,$ each one appears $\tfrac{D(D-1)}{N-1}$ times, i.e. for all nonzero $g\in\calG,$ $\#\{(d,d')\in\calG: g=d-d'\}=\tfrac{D(D-1)}{N-1}$.
+
+Any subset $\calD$ of $\calG$ can also be classified as a difference set based on the autocorrelation of $\chi_\calD,$ i.e. by $\chi_\calD$ convolved with its own involution. In particular, by definition of involution and convolution, $(\chi_\calD*\tilde{\chi_\calD})(g)=\sum_{g'\in\calG}\chi_{\calD}(g')\chi_{g+\calD}(g')=\#(\calD\cup(g+\calD)).$ Then applying the definition of a difference set, we see that 
+\begin{equation*}
+    (\chi_\calD*\tilde{\chi_\calD})(g)=\#(\calD\cup(g+\calD))=\#\{(d,d')\in\calG: g=d-d'\}=\left\{\begin{array}{lc}
+    D & g=0 \\
+    \tfrac{D(D-1)}{N-1} & g\not=0 
+    \end{array}\right..
+\end{equation*}
+In summary, $\calD$ is a difference set for $\calG$ if and only if the the autocorrelation of $\chi_\calD$ is given by $\smash{(D-\tfrac{D(D-1)}{N-1})\delta_0+\tfrac{D(D-1)}{N-1}\bfone}.$
+
+Since the rows of the character table of $\calG$ are tight, given any $\calD\subseteq\calG$ we can restrict each character $\gamma\in\hat{\calG}$ to $\calD,$ that is we can regard $\gamma\in\bbC^\calD$ and the result is still tight. It is known that this restriction, i.e. the $\calD\times\hat{\calG}$ indexed submatrix of the character table of $\calG,$ is equiangular if and only if $\calD$ is a difference set for $\calG.$ In this case, the result is an ETF known as a \textit{harmonic ETF.} The complement of any difference set is then itself a difference set since this is analogous to the Naimark complement of an ETF being an ETF. Also any shift of a difference set is also a difference set.
+
+
+
+%Given a prime power $Q$ and an integer $J>1,$ a \textit{Singer difference set} is given by
+%\begin{equation}
+    %\label{eq:Singer DS}
+    %\{[\beta]\in\bbF_{Q^J}^\times\backslash\bbF_Q^\times:\tr(\beta)=0\}.
+%\end{equation} 
+%This is a difference set in the group $\smash{\bbF_{Q^J}^\times\backslash\bbF_{Q}^\timew}$ which has order $N=\smash{\tfrac{Q^J-1}{Q-1}}.$ The cardinality of the difference set is $D'=\smash{\tfrac{Q^{J-1}-1}{Q-1}}$ since the difference set is a hyperplane. We will be particularly interested in the complements of Singer difference sets. Here the complement is a difference set of cardinality $D=N-D'=Q^{J-1}.$ 
+
+%As an example when $Q=2$ and $J=4,$ the group is $\calG=\bbF_{16}^\times\backslash\bbF_{2}^\times\cong\bbZ_{15}$ and a difference set is $\calD=\{0,1,2,4,5,8,10\}.$ The complement of this difference set is $\calD^C=\{3,6,7,9,11,12,13,14\}.$
+
+%Another difference set construction is a \textit{McFarland difference sets}. Given a finite abelian group, $\calG,$ of order $\smash{\tfrac{Q^J-1}{Q-1}+1},$ let $\calU_h$ enumerate the distinct hyperplanes of $\bbF_{Q^J}.$
+%The corresponding McFarland difference set is 
+%\begin{equation}
+%    \{(g,v):g\in\calG,~v\in\calU_h\} 
+%\end{equation}
+%in the group $\calG\times\bbF_{Q^J}$. This group has order $\smash{N=Q^J(\tfrac{Q^J-1}{Q-1}+1)}$ and the cardinality of the difference set is given by $\smash{D=Q^{J-1}(\tfrac{Q^J-1}{Q-1})}.$ 
+
+%For any twin prime powers, $Q$ and $Q+2,$ the corresponding \textit{twin prime power difference set} in the group $\bbF_Q^+\times\bbF_{Q+2}^+$ is given by
+%\begin{equation}
+%    \label{eq:TPP DS}
+%    \{(x,y)\in\bbF_{Q}^+\times\bbF_{Q+2}^+:(x,y)\in S_Q\times S_{Q+2}\text{ or }(x,y)\in N_Q\times N_{Q+2}\text{ or }y=0\}
+%\end{equation}
+%Here $N_Q$ is all nonsquares in $\bbF_Q^+$ and $S_Q$ is all nonzero squares in $\bbF_Q^+.$ The order of the group is given by $N=Q(Q+2)$ and the corresponding twin prime power difference set has cardinality $D'=\smash{\tfrac{Q^2+2Q-1}{2}}.$ Again, we will be particularly interested in the complement of twin prime power difference sets which results in a difference set of cardinality $D=N-D'=\smash{\tfrac{Q^2+2Q+1}{2}}.$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Harmonic ETFs that are disjoint unions of simplicies}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+An ETF $\{\bfx_n\}_{n\in\calN},$ is called a \textit{regular $(N-1)$-simplex} if it is an ETF for some $N-1$-dimensional Hilbert space. In this case the Welch Bound is achieved and is given by $\max_{n\not=n'}\abs{\ip{\bfx_n}{\bfx_{n'}}}=\tfrac{1}{N-1}.$ For any integer $N-1,$ a regular simplex always exists as it is a Naimark complement of any unit scalars $\{b_n\}_{n\in\calN}$ which is an ETF for $\bbF^1$. 
+
+For the remainder of this section let $\calD$ be a difference set of cardinality $D$ for a group $\calG$ of cardinality $N.$ Some harmonic ETFs can be written as a disjoint union of simplices. As shown in \cite{FickusJKM18} if
+\begin{equation}
+    \label{eq: S recip Welch Bound}
+    S:=\sqrt{\tfrac{D(N-1)}{N-D}}
+\end{equation}
+is the inverse of the Welch bound \eqref{eq:Wlech Bound}, and there exists a subgroup $\calH$ of $\calG$ with order $V=\tfrac{N}{S+1}$ such that $\calD\cap\calH=\emptyset,$ the harmonic ETF resulting from $\calD$ is a disjoint union of $V$ regular $S$-simplices. Moreover, each simplex is indexed by a coset of $\calH^\perp.$ Denoting the ETF by $\smash{\{\bfx_\gamma\}_{\gamma\in\hat{\calG}}},$ this means that for all $\gamma'\in\hat{\calG},$ $\smash{\{\bfx_\gamma\}_{\gamma\in\gamma'\calH^\perp}}$ is a regular $S-$simplex. Note that $S$ must necessarily be an integer. 
+
+As an example, we consider the $8\times 15$ harmonic ETF from a \textit{Singer difference set.}
+In general, for any prime power $Q$ and integer $J>1,$ the corresponding Singer difference set is given by
+\begin{equation}
+    \label{eq:Singer DS}
+    \{[\beta]\in\bbF_{Q^J}^\times\backslash\bbF_Q^\times:\tr(\beta)=0\}.
+\end{equation} 
+This is a difference set in the group $\calG=\smash{\bbF_{Q^J}^\times\backslash\bbF_{Q}^\timew}$ which has order $N=\smash{\tfrac{Q^J-1}{Q-1}}.$ The cardinality of the difference set is $D'=\smash{\tfrac{Q^{J-1}-1}{Q-1}}$ since the difference set is a hyperplane.
+
+\begin{example}
+Letting $Q=2$ and $J=4,$ our group is $\calG=\bbF_{16}^\times\setminus\bbF_2^\times\equiv\bbZ_{15}.$ Since $x^4+x+1$ is a primitive polynomial over $\bbF_{2}$ \cite{HansenM92}, $\alpha$ generates the multiplicative group of $\bbF_{16}=\{a+b\alpha+c\alpha^2+d\alpha^3:a,b,c,d\in\bbF_2,~\alpha^4+\alpha+1=0\}.$ Then the hyperplane $\{\beta\in\bbF_{16}:0=\tr(\beta)=\beta+\beta^2+\beta^4+\beta^8\}$ is the set $\{0\}\cup\{\alpha^j:j=0,1,2,3,4,8,10\}.$ To see this let $\bfA$ be the companion matrix of the primitive polynomial $x^4+x+1$ over $\bbF_2$ and then the field trace, $\tr(\alpha^j),$ is the matrix trace, $\Tr(\bfA^j),$ for all $j=0,...,6.$ Finally, removing the zero element of $\bbF_{16}$ and identifying the remaining element modulo $\bbF_2^\times$ gives the Singer difference set $\{0,1,2,4,5,8,10\}.$
+
+Here the resulting ETF(7,15) has $S=\tfrac{7}{2}.$ Since this is now an integer, the ETF is not a disjoint union of simplices. However, the complement of the Singer difference set is $\{3,6,7,9,11,12,13,14\}.$ This difference set results in the harmonic ETF(8,15) which has $S=4.$ Further, it avoids a subgroup of $\calG=\bbZ_{15}$ of order $V=3,$ namely the subgroup $\calH=\{0,5,10\}.$ Therefore, this ETF(8,15) is a disjoint union of three regualr 4-simplices.
+
+In particular, each simplex is indexed by a coset of $\calH^\perp=\{3,6,9,12\}.$ Therefore the 
+
+Since the characters of $\bbZ_{15}$ are given by $\{\gamma_n\}_{n\in\bbZ_{15}},$ $\gamma_n(g)=e^\tfrac{2\pi ing}{15},$ letting $\omega=e^\tfrac{2\pi i}{15},$ the $8\times 15$ harmonic ETF is
+\begin{equation}
+    \left[\begin{array}{ccccccccccccc}
+    1 & w^3 & w^6 & w^9 & w^{12} \\
+    1 & w^
+    \end{array}\right]
+\end{equation}
+
+\end{example}
+Here $\calD$ must avoid a subgroup of $\calG$ of order $V,$ in fact this is the maximal size subgroup that can be avoided and when this size subgroup is avoided the cardinality of $\{d\in\calD:d\equiv s\mod(S+1)\}$ is constant for all $s=1,...,S$:
+
+%Define \begin{equation}
+%\label{eq: S formula}
+%    S=\sqrt{\tfrac{D(N-1)}{N-D}}
+%\end{equation} to be the reciprocal of the Welch bound. Assume that there exists $\calH\leq\calG$ such that $\calD\cap\calH=\emptyset$ and the size of $\calH$ is given by \begin{equation}
+%\label{eq:V formula}
+%    V=\tfrac{N}{S+1}.
+%\end{equation} Then $\{\bfx_\gamma\}_{\gamma\in\hat{\calG}}\subseteq\bbC^\calD$ defined by $\bfx_{\gamma}(d)=\gamma(d)$ for all $d\in\calD$ is an ETF for $\bbC^\calD$ and moreover for all $\gamma'\in\Gamma$ the $S+1$ vectors $\{\bfx_\gamma\}_{\gamma\in\gamma'\calH^\perp}$ form a regular simplex for their span with $\sum_{\gamma\in\gamma'\calH^\perp}\bfx_\gamma=0.$
+
+%To see that this ETF is a disjoint union of regular simplices first  Since $\calH\cap\calD=\emptyset,$ $\chi_\calH\chi_\calD=\bfzero,$ then $\bfzero=\bfE^*\bfzero=\bfE^*(\chi_\calH\chi_\calD)=\tfrac{1}{N}\left(\bfE^*\chi_\calH\right)*\left(\bfE^*\chi_\calD\right)=\tfrac{1}{S+1}\left(\chi_{\calH^\perp}*\bfE^*\chi_\calD\right).$ Evaluating this at $1\in\hat{\calG}$ gives that \begin{equation*}
+    %0=\left[\chi_{\calH^\perp}*(\bfE^*\chi_\calD)\right](1)=\sum_{\gamma\in\Gamma}\chi_{\calH^\perp}(\gamma)\left(\bfE^*\chi_\calD\right)(\bf1\gamma^{-1})=\sum_{\gamma\in\calH^\perp}\ip{\gamma^{-1}}{\chi_\calD}=\sum_{\gamma\in\calH^\perp}\sum_{d\in\calD}\gamma(d).
+%\end{equation*} This fact together with the properties of a norm gives that $\sum_{\gamma\in\gamma'\calH^\perp}\bfx_\gamma=0$ since \begin{equation*}
+    %\norm{\sum_{\gamma\in\calH^\perp}\bfx_\gamma}^2=\sum_{\gamma\in\calH^\perp}\sum_{\gamma'\in\calH^\perp}\ip{\bfx_\gamma}{\bfx_{\gamma'}}=\sum_{d\in\calD}\sum_{\gamma\in\calH^\perp}\sum_{\gamma'\in\calH^\perp}(\gamma^{-1}\gamma')(d)=\#(\calH^\perp)\sum_{d\in\calD}\sum_{\gamma\in\calH^\perp}\gamma(d)=0.
+%\end{equation*} Now fix $\gamma''\in\hat{\calG},$ since $\sum_{\gamma\in\gamma''\calH^\perp}\bfx_\gamma=0,$ the $S+1$ vectors $\{\bfx_\gamma\}_{\gamma\in\gamma''\calH^\perp}$ lie in some $S$-dimensional subspace $\bbH$ of $\bbC^\calD.$ Since their coherence is \begin{equation*}\max_{\substack{\gamma,\gamma'\in\gamma''\calH^\perp\\\gamma\not=\gamma'}}\tfrac{\abs{\ip{\bfx_\gamma}{\bfx_{\gamma'}}}}{\norm{\bfx_\gamma}\norm{\bfx_{\gamma'}}}=\sqrt{\tfrac{N-D}{D(N-1)}}=\tfrac{1}{S},\end{equation*} these vectors acheive the Welch bound for $\bbH$ meaning they form an ETF$(S,S+1)$ or regular simplex for $\bbH.$ This paper will reference three known constructions of difference set, Singer difference sets, McFarland difference sets, and twin prime power difference sets. All of these can be related to an ETF that is a disjoint union of simplicies.
+
+
+%As seen in section 2, some ETFs can be written as a disjoint union of simplices. This section will expand on this class of ETFs building the tools needed to prove results in the following sections. Let $\calD$ be a difference set of size $D$ in the group $\calG$ of size $N$ that avoids a subgroup $\calH\leq\calG$ such that $\abs{\calH}=V.$ Recall from section 2 that when $V=\tfrac{N}{S+1}$ and the reciprocal Welch bound is an integer then the corresponding ETF is a disjoint union of simplices. This value of $V$ is the maximal size subgroup that $\calD$ can avoid.
+
+\begin{theorem}
+\label{thm:Maximum V} 
+Let $\calD$ be a $D$-element difference set for the finite abelian group $\calG$ of order $N$ and let $S$ be the reciprocal Welch bound as defined in \eqref{eq: S recip Welch Bound}. If $\calH$ is a subgroup of $\calG$ such that $\abs{\calH}=V$ and $\calD\cap\calH=\emptyset,$ then $V\leq\tfrac{N}{S+1}$ and equality holds if and only if $\#\{d\in\calD:d\equiv s\mod(S+1)\}=\tfrac{D}{S}$ for all $s=1,...,S.$
+\end{theorem}
+\begin{proof}
+Since $\calD$ is a difference set, for any nonzero $g\in\calG,$ $\#\{(d,d')\in\calD\times\calD:d-d'=g\}=\smash{\tfrac{D(D-1)}{N-1}}$ and so $\#\{(d,d')\in\calD\times\calD:d-d'\in H\setminus\{0\}\}=(V-1)\cdot\smash{\tfrac{D(D-1)}{N-1}}.$ Let $S'=\tfrac{N}{V}-1$ be the number of nontrivial cosets of $\calH$ and let $\{g_s+\calH\}_{s=1}^{S'}$ be the representatives of these cosets. For each $s=1,...,S'$ let $\calD_s=\calD\cap(g_s+\calH)$ have cardinality $D_s.$ Note that for any $d,d'\in\calD,$ $d-d'\in\calH$ if and only if there exists $s=1,...,S'$ such that $d,d'\in\calD_s.$ In this case
+\begin{equation*}
+\tfrac{D(D-1)(V-1)}{N-1}=\#\{(d,d')\in\calD\times\calD:d-d'\in\calH\setminus\{0\}\}=\sum_{s=1}^{S'}(D_s^2-D_s)=\sum_{s=1}^{S'}D_s^2-D.
+\end{equation*}
+Adding and subtracting $\tfrac{D}{S'}$ gives
+\begin{equation*}
+\tfrac{D(D-1)(V-1)}{N-1}=\sum_{s=1}^{S'}\left[\left(D_s-\tfrac{D}{S'}\right)+\tfrac{D}{S'}\right]^2-D=\sum_{s=1}^{S'}\left(D_s-\tfrac{D}{S'}\right)^2+D\left(\tfrac{D}{S'}-1\right)\geq 0+D\left(\tfrac{D}{S'}-1\right)
+\end{equation*}
+where equality holds if and only if $D_s=\tfrac{D}{S'}$ for all $s=1,...,S'.$ Since $S'=\tfrac{N}{V}-1,$ substituting $V=\tfrac{N}{S'+1}$ into this inequality and solving gives that $S'\geq S$ and $S'=S$ if and only if $D_s=\tfrac{D}{S'}$ for all $s=1,...,S'$. Finally, $\tfrac{N}{V}-1=S'\geq S$ and so $V\leq\tfrac{N}{S+1}.$ Therefore $V=\tfrac{N}{S+1}$ precisely when $D_s=\tfrac{D}{S}.$
+\end{proof}
+
+
+%Then $\{\bfx_\gamma\}_{\gamma\in\hat{\calG}}\subseteq\bbC^\calD$ defined by $\bfx_{\gamma}(d)=\gamma(d)$ for all $d\in\calD$ is an ETF for $\bbC^\calD$ and moreover for all $\gamma'\in\Gamma$ the $S+1$ vectors $\{\bfx_\gamma\}_{\gamma\in\gamma'\calH^\perp}$ form a regular simplex for their span with $\sum_{\gamma\in\gamma'\calH^\perp}\bfx_\gamma=0.$
+
+%To see that this ETF is a disjoint union of regular simplices first let $\bfE^*$ be the discrete Fourier transform (DFT) on $\calG.$ That is letting $\bfE:\bbC^{\hat{\calG}}\to\bbC^\calG$ such that, that is for all $\bfy\in\bbC^{\hat{\calG}},$ $\bfE\bfy=\sum_{\gamma\in\hat{\calG}}\bfy(\gamma)\gamma$ be the synthesis operator of $\hat{\calG},$ then the corresponding DFT is \begin{equation}\label{eq:DFT}
+%    \bfE^*:\bbC^\calG\to\bbC^{\hat{\calG}} \qquad (\bfE^*\bfx)(\gamma)=\ip{\gamma}{\bfx}
+%\end{equation} Since $\calH\cap\calD=\emptyset,$ $\chi_\calH\chi_\calD=\bfzero,$ then $\bfzero=\bfE^*\bfzero=\bfE^*(\chi_\calH\chi_\calD)=\tfrac{1}{N}\left(\bfE^*\chi_\calH\right)*\left(\bfE^*\chi_\calD\right)=\tfrac{1}{S+1}\left(\chi_{\calH^\perp}*\bfE^*\chi_\calD\right).$ 
+
+%For $\gamma=\bf1,$ \begin{equation*}
+%    0=\left[\chi_{\calH^\perp}*(\bfE^*\chi_\calD)\right](1)=\sum_{\gamma\in\Gamma}\chi_{\calH^\perp}(\gamma)\left(\bfE^*\chi_\calD\right)(\bf1\gamma^{-1})=\sum_{\gamma\in\calH^\perp}\ip{\gamma^{-1}}{\chi_\calD}=\sum_{\gamma\in\calH^\perp}\sum_{d\in\calD}\gamma(d).
+%\end{equation*} This fact together with the properties of a norm gives that $\sum_{\gamma\in\gamma'\calH^\perp}\bfx_\gamma=0$ since \begin{equation*}
+%    \norm{\sum_{\gamma\in\calH^\perp}\bfx_\gamma}^2=\sum_{\gamma\in\calH^\perp}\sum_{\gamma'\in\calH^\perp}\ip{\bfx_\gamma}{\bfx_{\gamma'}}=\sum_{d\in\calD}\sum_{\gamma\in\calH^\perp}\sum_{\gamma'\in\calH^\perp}(\gamma^{-1}\gamma')(d)=\#(\calH^\perp)\sum_{d\in\calD}\sum_{\gamma\in\calH^\perp}\gamma(d)=0.
+%\end{equation*} Now fixed a $\gamma''\in\hat{\calG},$ since $\sum_{\gamma\in\gamma''\calH^\perp}\bfx_\gamma=0,$ the $S+1$ vectors $\{\bfx_\gamma\}_{\gamma\in\gamma''\calH^\perp}$ lie in some $S$-dimensional subspace $\bbH$ of $\bbC^\calD.$ Since their coherence is \begin{equation*}\max_{\substack{\gamma,\gamma'\in\gamma''\calH^\perp\\\gamma\not=\gamma'}}\tfrac{\abs{\ip{\bfx_\gamma}{\bfx_{\gamma'}}}}{\norm{\bfx_\gamma}\norm{\bfx_{\gamma'}}}=\sqrt{\tfrac{N-D}{D(N-1)}}=\tfrac{1}{S},\end{equation*} these vectors acheive the Welch bound for $\bbH$ meaning they form an ETF$(S,S+1)$ or regular simplex for $\bbH.$
+
+Now let $\{\bfx_\gamma\}_{\gamma\in\hat{\calG}}$ be a harmonic ETF that can be written as a disjoint union of simplices. We will define the operator $\bfX$ to represent this ETF, scaled so each vector is unit norm: 
+\begin{equation}\label{eq:General ETF}
+    \bfX\in\bbC^{\calD\times\hat{\calG}},\qquad \bfX(d,\gamma)=\tfrac{1}{\sqrt{D}}\gamma(d).
+\end{equation} Further since $\smash{\{\bfx_\gamma\}_{\gamma\in\hat{\calG}}}$ can be partitioned into $V$ regular simplices that correspond to cosets of $\calH^\perp,$ for all $\gamma\in\hat{\calG}$ these simplices are given by
+\begin{equation}\label{eq:ETF simplices}
+    \bfX_\gamma\in\bbC^{\calD\times\calH^\perp} \qquad \bfX_\gamma(d,\gamma')=\tfrac{1}{\sqrt{D}}(\gamma\gamma')(d).
+\end{equation}
+Note that these simplices $\{\bfX_\gamma\}_{\gamma\in\calH^\perp}$ span $(S+1)$-dimensional subspaces of the $D$-dimensional space spanned by the ETF. It makes sense then to find embedding operators, $\{\bfE_\gamma\}_{\gamma\in\hat{\calG}},$ that embed the canonical regualar $S$-simplex lying in an $(S+1)$-dimensional Hilbert space into the $D$-dimensional space. The canonical regular $S-$simplex is given by 
+\begin{equation}\label{eq:standard simplex}
+    \bfPsi\in\bbC^{(\calG/\calH)\backslash\{0+\calH\}\times\calH^\perp},\qquad \bfPsi(g+\calH,\gamma)=\tfrac{1}{\sqrt{S}}\gamma(g).
+\end{equation} 
+
+To verify that this is the desired ETF, first note that $\bfPsi$ is well defined since if $g+\calH=g'+\calH,$ then $g-g'\in\calH$ and so $\gamma(g)\gamma^{-1}(g')=\gamma(g-g')=1$ since $\gamma\in\calH^\perp.$ Then multiplying by $\gamma(g')$ on the right gives that $\gamma(g)=\gamma(g').$ Further since $(\calG/\calH)^{\hat{}}\cong\calH^\perp,$ the character table of $(\calG/\calH)$ is essentially the $(\calG/\calH)\times\calH^\perp$ indexed matrix whose $(g+\calH,\gamma)$th entry is $\gamma(g),$ Then $\bfPsi$ is a Naimark complement of the first row of this matrix, which is all ones, and so is a regular simplex. Computationally this means
+\begin{equation*}
+(\bfPsi\bfPsi^*)(g+\calH,g'+\calH)=\left\{\begin{array}{cl}
+\tfrac{S+1}{S}, &g+\calH=g'+\calH\\
+0, &\text{else}
+\end{array}\right.\qquad\text{and}\qquad (\bfPsi^*\bfPsi)(\gamma,\gamma')=\left\{\begin{array}{cl}
+1, &\gamma=\gamma'\\
+\tfrac{-1}{S}, &\text{else}
+\end{array}\right..
+\end{equation*}
+
+Then for all $\gamma\in\hat{\calG},$ the embedding operators $\bfE_\gamma\in\bbC^{\calD\times(\calG\backslash\calH)/(0+\calH)}$ need to satisfy that $\bfE_\gamma\bfPsi=\bfX_\gamma.$ Applying the adjoint $\bfPsi^*$ to the right gives that $\bfE_\gamma=\tfrac{S}{S+1}\bfX_\gamma\bfPsi^*$ for all $\gamma\in\hat{\calG}.$ Finally applying \eqref{eq:ETF simplices} and \eqref{eq:standard simplex} gives an explicit form for the embedding operators: for all $\gamma\in\hat{\calG}$
+\begin{equation}
+\label{eq: Embedding Operators}
+    \bfE_\gamma\in\bbC^{\calD\times(\calG\backslash\calH)/(0+\calH)}\qquad \bfE_\gamma(d,g+\calH)=\left\{\begin{array}{cl}
+\tfrac{\sqrt{S}}{\sqrt{D}}\gamma(d), &d+\calH=g+\calH\\
+0, & d+\calH\not=g+\calH
+\end{array}.\right.
+\end{equation}
+
+Using the \textit{modulation operator}, $\bfM_\gamma\in\bbC^{\calD\times\calD},$ $\bfM_\gamma(d,d')=\gamma(d)\delta(d-d')$ for all $\gamma\in\hat{\calG}$ the embedding operators can all be related to $\bfE_1.$ Specifically, for any $\gamma\in\hat{\calG},$ $\bfE_\gamma=\bfM_\gamma\bfE_1.$ Using this definition and \eqref{eq: Embedding Operators} it is clear to see that $\bfE_\gamma^*\bfE_\gamma^{}=\bfE_1^*\bfE_1^{}=\bfI.$ This means that each column of $\bfE_\gamma$ is unit norm, and so for all $g\in\calG/\calH$
+\begin{equation*}
+    1=\sum_{d\in\calD}\abs{\bfE_\gamma(d,g+\calH)}^2=\sum_{\substack{d\in\calD\\g-d\in\calH}}\tfrac{S}{D}=\tfrac{S}{D}\#\{d\in\calD:d+\calH=g+\calH\}.
+\end{equation*}
+This implies that the cardinality of the set obtained by shifting $\calD$ by any element of $\calG$ and intersecting with $\calH$ is constant, i.e.
+\begin{equation}
+    \label{eq: Constant size of (g+D) intersect H}
+    \tfrac{D}{S}=\#\{d\in\calD:d-g\in\calH\}=\#\left[(g+\calD)\cap\calH\right].
+\end{equation}
+This is consistent with the results of \ref{thm:Maximum V}. Further the cross Gram matrices of these embedding operators and always diagonal:
+
+\begin{theorem}
+\label{thm:Embedding Cross Grams diagonal}
+The cross Gram matrices of the embedding operators are diagonal. and have constant norm when $g+\calD_\cap\calH$ is a difference set for $\calH.$
+\end{theorem}
+\begin{proof}
+For all $\gamma,\gamma'\in\hat{\calG},$ $\bfE_\gamma^*\bfE_{\gamma'}^{}\in\bbC^{\calG/\calH\backslash\{0+\calH\}\times \calG/\calH\backslash\{0+\calH\}}.$ Then the cross Grams are diagonal since
+for all $g+\calH,g'+\calH\in\calG/\calH\backslash\{0+\calH\}$
+\begin{align}
+(\bfE_\gamma^*\bfE_{\gamma'}^{})(g+\calH,g'
++\calH)&=\sum_{d\in\calD}\bfE_\gamma^*(g+\calH,d)\bfE_{\gamma'}(d,g'+\calH)\nonumber\\
+&=\tfrac{S}{D}\sum_{d\in\calD}\left\{\begin{array}{ll}
+(\gamma^{-1}\gamma')(d), & d+\calH=g+\calH=g'+\calH\\
+0, &\text{else}
+\end{array}\right\}\nonumber\\
+&=\left\{\begin{array}{ll}
+\tfrac{S}{D}\displaystyle\sum_{\substack{d\in\calD\\d+\calH=g+\calH}}(\gamma^{-1}\gamma')(d), &g+\calH=g'+\calH \\\label{eq:Embedding Cross Grams}
+0, &\text{else} \end{array}\right..
+\end{align}
+\end{proof}
+
+
+\begin{theorem}
+\label{thm: Cross Grams have constant modulus}
+In the case that $g+\calD_\cap\calH$ is a difference set for $\calH$ is a difference set for $\calH$ these cross Grams have constant modulus along the diagonal
+\end{theorem}
+\begin{proof}
+In the case that $\gamma=\gamma'$ the cross Grams have constant modulus since by \eqref{eq: Constant size of (g+D) intersect H} and \eqref{eq:Embedding Cross Grams}, $(\bfE_\gamma^*\bfE_\gamma)(g+\calH,g+\calH)=1.$
+Otherwise, when $\gamma\not=\gamma'$ the diagonal entries of the cross Gram have constant norm:
+\begin{align*}
+\abs{(\bfE_\gamma^*\bfE_{\gamma'})(g+\calH,g'+\calH)}^2&=\abs{\tfrac{S}{D}\sum_{\substack{d\in\calD\\d+\calH=g+\calH}}(\gamma^{-1}\gamma')(d)}^2\\
+&=\tfrac{S^2}{D^2}\sum_{\substack{d\in\calD\\d+\calH=g+\calH}}\sum_{\substack{d'\in\calD\\d'+\calH=g+\calH}}\overline{(\gamma^{-1}\gamma')(d)}(\gamma^{-1}\gamma')(d)\\
+&=\tfrac{S^2}{D^2}\sum_{\substack{d\in\calD\\d+\calH=g+\calH}}\sum_{\substack{d'\in\calD\\d'+\calH=g+\calH}}(\gamma^{-1}\gamma')(d'-d)
+\end{align*}
+Assuming for all $g\in\calG/\calH,$ $(g+\calD)\cap\calH$ is a difference set for $\calH$ this becomes 
+\begin{align*}
+\abs{(\bfE_\gamma^*\bfE_{\gamma'})(g+\calH,g'+\calH)}&=\tfrac{S^2}{D^2}\left[\tfrac{D}{S}(\gamma^{-1}\gamma')(0)+\tfrac{(D/S)(D/S-1)}{V-1}\sum_{h\in\calH\backslash\{0\}}(\gamma^{-1}\gamma')(h)\right]\\
+&=\tfrac{S}{D}\left\{1+\tfrac{(D/S)-1}{V-1}\left[1+\sum_{h\in\calH}(\gamma^{-1}\gamma')(h)\right]\right\}\\
+&=\tfrac{S}{D}\left(1+\tfrac{(D/S)-1}{V-1}\left\{\begin{array}{cl}
+V-1, & \gamma^{-1}\gamma'\in\calH^\perp\\
+-1, &\gamma^{-1}\gamma'\not\in\calH^\perp
+\end{array}\right\}\right)\\
+&=\left\{\begin{array}{cl}
+1, & \gamma^{-1}\gamma'\in\calH^\perp\\
+\tfrac{1}{D}\left(S-\tfrac{D-S}{V-1}\right), &\gamma^{-1}\gamma'\not\in\calH^\perp
+\end{array}\right.\\
+&=\left\{\begin{array}{cl}
+1, & \gamma^{-1}\gamma'\in\calH^\perp\\
+\tfrac{1}{S}, &\gamma^{-1}\gamma'\not\in\calH^\perp
+\end{array}\right.
+\end{align*}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Circulant Conference Matrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lemma}
+\label{lemma:Fourier Transform is Constant modulus}
+Let $\bfF^*$ be the Fourier transform, then $\abs{\bfF^*\bfx}=1$ if and only if $\{\bfT^g\bfx\}_{g\in\calG}$ is orthonormal.
+\end{lemma}
+\begin{proof}
+For all $\gamma\in\hat{\calG},$ $1=\abs{\bfF^*\bfx}^2=\overline{(\bfF^*\bfx)}(\bfF^*\bfx)$ if and only if $N\delta_0=\bfF1=\bfF\left[(\bfF^*\bfx)(\bfF^*\bfx)\right]=\frac{1}{N}\left[(\bfF\overline{\bfF^*\bfx})*(\bfF\bfF^*\bfx)\right]=N(\tilde{\bfx}*\bfx),$ that is if and only if $\delta_0=\tilde{\bfx}*\bfx.$ This then happens if and only if $\ip{\bfT^g\bfx}{\bfx}=\delta_0(g)$ or $\{\bfT^g\bfx\}_{g\in\calG}$ is an ONB for $\bbC^\calG.$
+\end{proof}
+
+\begin{theorem}
+\label{thm:Circular Conference Matrix}
+The diagonal entries of the cross grams where $\gamma\not=\gamma'$ tack on a zero form a circulant conference matrix.
+\end{theorem}
+\begin{proof}
+First note that 
+\begin{align*}
+(\Phi_1^*\Phi_\gamma)(\eta,\eta')&=\sum_{g\in\calD}\Phi_1^*(\eta,g)\Phi_\gamma(g,\eta')\\
+&=\sum_{g\in\calD}\frac{1}{\sqrt{D}}\overline{\eta(g)}\frac{1}{\sqrt{D}}\gamma(g)\eta'(g)\\
+&=\sum_{g\in\calD}\frac{1}{\sqrt{D}}\Phi^*(\eta,g)\Phi(g,\gamma\eta')\\
+&=(\Phi^*\Phi)(\eta,\gamma\eta')
+\end{align*} and therefore,  for all $\gamma,\gamma'\in\hat{\calG}$ and all $\eta,\eta'\in\calH^\perp$
+$\abs{(\Phi_1^*\Phi_\gamma)(\eta,\eta')}=\left\{\begin{array}{cl}
+1, &\eta=\gamma\eta'\\
+\frac{1}{S}, &\eta\not=\gamma\eta'
+\end{array}\right.,$ which means when $\gamma\not\in\calH^\perp$ this value is $\frac{1}{S}.$ Then for all $\eta\in\calH^\perp,$ letting $\bfy_\gamma=\frac{1}{D}\sum_{\substack{d\in\calD\\d+\calH=g+\calH}}\gamma(d),$
+\begin{align*}
+(\Phi_1^*\Phi_\gamma)(1,\eta)&=(\Psi^*\bfE_1^*\bfE_\gamma\Psi)(1,\eta)\\
+&=\sum_{\substack{g+\calH\in\calG/\calH\\g+\calH\not=\calH}}\sum_{\substack{g'+\calH\in\calG/\calH\\g'+\calH\not=\calH}}\Psi^*(1,g+\calH)(\bfE_1^*\bfE_\gamma)(g+\calH,g'+\calH)\Psi(g'+\calH,\eta)\\
+&=\frac{1}{S}\sum_{\substack{g+\calH\in\calG/\calH\\g+\calH\not=\calH}}\sum_{\substack{g'+\calH\in\calG/\calH\\g'+\calH\not=\calH}}\left\{\begin{array}{cl}
+\frac{S}{D}\sum_{\substack{d\in\calD\\d+\calH=g+\calH}}\gamma(d), & g+\calH=g'+\calH\\
+0, &\text{else}
+\end{array}\right\}\eta(g')\\
+&=\frac{1}{D}\sum_{\substack{g+\calH\in\calG/\calH\\g+\calH\not=\calH}}\sum_{\substack{d\in\calD\\d+\calH=g+\calH}}\gamma(d)\eta(g)\\
+&=\sum_{g+\calH\in\calG/\calH}\left\{\begin{array}{cl}
+\frac{1}{D}\sum_{\substack{d\in\calD\\d+\calH=g+\calH}}\gamma(d), & g+\calH\not=\calH\\ 
+0, & g+\calH=\calH
+\end{array}\right\}\bfF(g+\calH,\eta)\\
+&=\sum_{g+\calH\in\calG/\calH}\overline{y_\gamma(g+\calH)}\bfF(g+\calH,\eta)\\
+&=\overline{\sum_{g+\calH\in\calG/\calH}\bfF^*(\eta,g+\calH)\bfy_\gamma(g+\calH)}\\
+&=\overline{(\bfF^*\bfy_\gamma)(\eta)}.
+\end{align*}
+Therefore, for all $\gamma\not\in\calH^\perp,$ $(\bfF^*\bfy_\gamma)(\eta)=\overline{\Phi_1^*\Phi_\gamma}(1,\eta)$ has modulus $\frac{1}{S}$ for all $\eta\in\calH^\perp.$ That means $[\bfF^*(S\bfy_\gamma)](\eta)=\overline{S(\Phi_1^*\Phi_\gamma)(1,\eta)}$ has modulus 1 for all $\eta\in\calH^\perp.$ That is by lemma $\ref{lemma:Fourier Transform is Constant modulus}$ the translates of $S\bfy_\gamma$ are orthonormal in $\bbC^{\calG/\calH}.$
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mutually unbiased simplices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results as they relate to families of equiangular tight frames}
+
+All three of the difference set constructions introduced in Section 2 are related to harmonic ETFs that can be written as a disjoint union of simplices. In particular, the complement of a Singer differece set when $J$ is even as defined in \eqref{eq:Singer DS}, any McFarland difference set, and the complement of a twin prime power difference set all result in a harmonic ETFs that can be written as a disjoint union of simplices \cite{FickusJKM18}.
+
+\begin{lemma}
+For all $t=1,...,S,$ there exists one $t\in\{1,...,S\}$ such that $D_t=H$ and the rest are Singer Difference sets with parameters $Q$ and $\frac{J}{2}.$
+\end{lemma}
+\begin{proof}
+Consider the Singer difference set, $\calD,$ in the group $\calG=\bbF_{Q^J}^X/\bbF_Q^X=\langle\bar{\alpha}\rangle.$ That is $\calD=\{\bar{\beta}\in G:\tr_{Q^J/Q}(\beta)=0\}$ and $\calH=\langle[\alpha]^{Q^{J/2}+1}\rangle=\bbF_{Q^{J/2}}^X/\bbF_Q^X\subset\calD.$ $\calD$ can be decomposed into $\#(G/H)=Q^{J/2}+1$ cosets such that for all $j=0,...,Q^{J/2},$ \begin{equation*}
+C_j=\left(\bar{\alpha}^{-j}\calD\right)\cap\calH=\{\bar{\alpha}^{-j}\bar{\beta}\in\calG:\tr_{Q^J/Q}(\beta)=0\}\cup\langle\bar{\alpha}^{Q^{J/2}+1}\rangle=\{\bar{\beta}\in\calG^{Q^{J/2}+1}:\tr_{Q^J/Q}(\alpha^j\beta)=0\}.
+\end{equation*}
+Therefore, $C_j=\{\beta\in\calH:\tr_{Q^{J/2}/Q}\left(\beta\tr_{Q^J/Q^{J/2}}(\alpha^j)\right)=0\}.$ 
+
+Now consider the case when $\tr_{Q^J/Q^{J/2}}(\alpha^j)=0.$ Then $C_j=\{\beta\in\calH:\tr(\beta0)=0\}=\calH.$ Since $\tr_{Q^J/Q^{J/2}}(\alpha^j)=\alpha^j+\left(\alpha^j\right)^{Q^{J/2}}=\alpha^j\left(1+\alpha^{j(Q^{J/2}-1)}\right),$ $0=\tr_{Q^J/Q^{J/2}}(\alpha^j)$ if and only if $\alpha^{j(Q^{J/2}-1)}=-1=\left\{\begin{array}{cl} 1, &Q\text{ is even}\\ \alpha^\frac{Q^J-1}{2}, &Q\text{ is odd}\end{array}\right.$ In the case that $Q$ is even this becomes $\tr_{Q^J/Q^{J/2}}(\alpha^j)=0$ if and only if $j(Q^{J/2}-1)=0\mod(Q^J-1)$ or equivalently $j=0\mod(Q^{J/2}+1)$ implying that $j=0$. Alternatively, in the case that $Q$ is odd this becomes, $\tr_{Q^J/Q^{J/2}}(\alpha^j)=0$ if and only if $j(Q^{J/2}-1)=\frac{Q^J-1}{2}\mod(Q^J-1)$ or equivalently $j=\frac{Q^{J/2}+1}{2}\mod(Q^{J/2}+1)$ implying that $j=\frac{Q^{J/2}+1}{2}.$
+
+Now consider the case where $\tr_{Q^J/Q^{J/2}}(\alpha^j)\not=0.$ Then $C_j=\{\beta\in\calH:\tr_{Q^{J/2}/Q\left(\beta\tr_{Q^J/Q^{J/2}}(\alpha^j)=0\right)}\}$ which is a Singer difference set with parameters $Q$ and $\frac{J}{2}.$
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section*{Acknowledgments}
+%The views expressed in this article are those of the authors and do not reflect the official policy or position of the United States Air Force, Department of Defense, or the U.S.~Government.
+
+%\bibliographystyle{plain}
+%\bibliography{Thesis.bib}
+\begin{thebibliography}{WW}
+
+\bibitem{BannaiMV05}
+E.\ Bannai, A.\ Munemasa, B.\ Venkov, The nonexistence of certain tight spherical designs, St. Petersburg Math. J. 16 (2005) 609-625.
+
+\bibitem{Bengtsson06}
+I.\ Bengtsson, Three says to look at mutually unbiased bases, arXiv:quant-ph/0610216.
+
+\bibitem{Chapman10}
+R.\ Chapman, Largest   number   of   vectors   with   pairwise   negative dot   product,  dot   product, https://mathoverflow.net/q/31440.
+
+\bibitem{ConwayHS96}
+J.\ H.\ Conway, R.\ H.\ Hardin, N.\ J.\ A.\ Sloane,
+Packing lines, planes, etc.: packings in Grassmannian spaces,
+Exp.\ Math.\ 5 (1996) 139--159.
+
+\bibitem{FickusJKM18}
+M.~Fickus, J.~Jasper, E.~J.~King, D.~G.~Mixon,
+Equiangular tight frames that contain regular simplices, Linear Algebra Appl.\ 555 (2018) 98--138.
+
+\bibitem{FickusM16}
+M.\ Fickus, D.\ Mixon, Table of the existence of equiangular tight frames, arXiv:1504.00253 (2016).
+
+\bibitem{HansenM92}
+T.\ Hansen, G.\ L.\ Mullen, Primitive polynomials over finite fields, Math. Comp. 59 (1992) 639-643.
+
+\bibitem{Zauner99}
+G.~Zauner,
+Quantum designs: Foundations of a noncommutative design theory,
+Ph.D.\ Thesis, University of Vienna, 1999.
+
+\end{thebibliography}
+\end{document}
+
