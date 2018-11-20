@@ -325,33 +325,38 @@ For the remainder of this section let $\calD$ be a difference set of cardinality
     \label{eq: S recip Welch Bound}
     S:=\sqrt{\tfrac{D(N-1)}{N-D}}
 \end{equation}
-is the inverse of the Welch bound \eqref{eq:Wlech Bound}, and there exists a subgroup $\calH$ of $\calG$ with order $V=\tfrac{N}{S+1}$ such that $\calD\cap\calH=\emptyset,$ the harmonic ETF resulting from $\calD$ is a disjoint union of $V$ regular $S$-simplices. Moreover, each simplex is indexed by a coset of $\calH^\perp.$ Denoting the ETF by $\smash{\{\bfx_\gamma\}_{\gamma\in\hat{\calG}}},$ this means that for all $\gamma'\in\hat{\calG},$ $\smash{\{\bfx_\gamma\}_{\gamma\in\gamma'\calH^\perp}}$ is a regular $S-$simplex. Note that $S$ must necessarily be an integer. 
+is the inverse of the Welch bound \eqref{eq:Wlech Bound} and there exists a subgroup $\calH$ of $\calG$ with order $V=\tfrac{N}{S+1}$ such that $\calD\cap\calH=\emptyset,$ the harmonic ETF resulting from $\calD$ is a disjoint union of $V$ regular $S$-simplices. Moreover, each simplex is indexed by a coset of $\calH^\perp.$ Denoting the ETF by $\smash{\{\bfx_\gamma\}_{\gamma\in\hat{\calG}}},$ this means that for all $\gamma'\in\hat{\calG},$ $\smash{\{\bfx_\gamma\}_{\gamma\in\gamma'\calH^\perp}}$ is a regular $S-$simplex. Note that $S$ must necessarily be an integer. 
 
-As an example, we consider the $8\times 15$ harmonic ETF from a \textit{Singer difference set.}
+As an example, we consider the $8\times 15$ harmonic ETF from the complement of a \textit{Singer difference set.}
 In general, for any prime power $Q$ and integer $J>1,$ the corresponding Singer difference set is given by
 \begin{equation}
     \label{eq:Singer DS}
-    \{[\beta]\in\bbF_{Q^J}^\times\backslash\bbF_Q^\times:\tr(\beta)=0\}.
+    \calD=\{[\beta]\in\bbF_{Q^J}^\times\backslash\bbF_Q^\times:\tr(\beta)=0\}.
 \end{equation} 
-This is a difference set in the group $\calG=\smash{\bbF_{Q^J}^\times\backslash\bbF_{Q}^\timew}$ which has order $N=\smash{\tfrac{Q^J-1}{Q-1}}.$ The cardinality of the difference set is $D'=\smash{\tfrac{Q^{J-1}-1}{Q-1}}$ since the difference set is a hyperplane.
+Here $\calD$ is a subset of the group $\calG=\smash{\bbF_{Q^J}^\times\backslash\bbF_{Q}^\times}$ which has order $N=\smash{\tfrac{Q^J-1}{Q-1}}.$ The cardinality of the difference set is $D=\smash{\tfrac{Q^{J-1}-1}{Q-1}}$ since the difference set is a hyperplane.
 
 \begin{example}
-Letting $Q=2$ and $J=4,$ our group is $\calG=\bbF_{16}^\times\setminus\bbF_2^\times\equiv\bbZ_{15}.$ Since $x^4+x+1$ is a primitive polynomial over $\bbF_{2}$ \cite{HansenM92}, $\alpha$ generates the multiplicative group of $\bbF_{16}=\{a+b\alpha+c\alpha^2+d\alpha^3:a,b,c,d\in\bbF_2,~\alpha^4+\alpha+1=0\}.$ Then the hyperplane $\{\beta\in\bbF_{16}:0=\tr(\beta)=\beta+\beta^2+\beta^4+\beta^8\}$ is the set $\{0\}\cup\{\alpha^j:j=0,1,2,3,4,8,10\}.$ To see this let $\bfA$ be the companion matrix of the primitive polynomial $x^4+x+1$ over $\bbF_2$ and then the field trace, $\tr(\alpha^j),$ is the matrix trace, $\Tr(\bfA^j),$ for all $j=0,...,6.$ Finally, removing the zero element of $\bbF_{16}$ and identifying the remaining element modulo $\bbF_2^\times$ gives the Singer difference set $\{0,1,2,4,5,8,10\}.$
+Letting $Q=2$ and $J=4,$ our group is $\calG=\bbF_{16}^\times\setminus\bbF_2^\times\cong\bbZ_{15}.$ Since $x^4+x+1$ is a primitive polynomial over $\bbF_{2}$ \cite{HansenM92}, $\alpha$ generates the multiplicative group of $\bbF_{16}=\{a+b\alpha+c\alpha^2+d\alpha^3:a,b,c,d\in\bbF_2,~\alpha^4+\alpha+1=0\}.$ Then the hyperplane $\{\beta\in\bbF_{16}:0=\tr(\beta)=\beta+\beta^2+\beta^4+\beta^8\}$ is the set $\{0\}\cup\{\alpha^j:j=0,1,2,4,5,8,10\}.$ To see this let $\bfA$ be the companion matrix of the primitive polynomial $x^4+x+1$ over $\bbF_2$ and then the field trace, $\tr(\alpha^j),$ is the matrix trace, $\Tr(\bfA^j),$ for all $j=0,...,6.$ Finally, removing the zero element of $\bbF_{16}$ and identifying the remaining elements modulo $\bbF_2^\times$ gives the Singer difference set $\{0,1,2,4,5,8,10\}.$
 
-Here the resulting ETF(7,15) has $S=\tfrac{7}{2}.$ Since this is now an integer, the ETF is not a disjoint union of simplices. However, the complement of the Singer difference set is $\{3,6,7,9,11,12,13,14\}.$ This difference set results in the harmonic ETF(8,15) which has $S=4.$ Further, it avoids a subgroup of $\calG=\bbZ_{15}$ of order $V=3,$ namely the subgroup $\calH=\{0,5,10\}.$ Therefore, this ETF(8,15) is a disjoint union of three regualr 4-simplices.
+Here the resulting ETF(7,15) has $S=\tfrac{7}{2}.$ Since this is not an integer, the ETF is cannot be written as a disjoint union of simplices. However, the complement of this Singer difference set is $\{3,6,7,9,11,12,13,14\}.$ This difference set results in the harmonic ETF(8,15) which has $S=4.$ Further, it avoids a subgroup of $\calG=\bbZ_{15}$ of order $V=3,$ namely the subgroup $\calH=\{0,5,10\}.$ Therefore, this ETF(8,15) is a disjoint union of three regular 4-simplices.
 
-In particular, each simplex is indexed by a coset of $\calH^\perp=\{3,6,9,12\}.$ Therefore the 
+In particular, each simplex is indexed by a coset of $\calH^\perp=\{3,6,9,12\}.$ Therefore, permuting the columns of the character table and letting $\omega=e^\tfrac{2\pi i}{15}$ gives the following ETF broken into three simplices:
 
-Since the characters of $\bbZ_{15}$ are given by $\{\gamma_n\}_{n\in\bbZ_{15}},$ $\gamma_n(g)=e^\tfrac{2\pi ing}{15},$ letting $\omega=e^\tfrac{2\pi i}{15},$ the $8\times 15$ harmonic ETF is
 \begin{equation}
-    \left[\begin{array}{ccccccccccccc}
-    1 & w^3 & w^6 & w^9 & w^{12} \\
-    1 & w^
+    \left[\begin{array}{ccccc|ccccc|ccccc}
+    1 & \omega^9 & \omega^3 & \omega^{12} & \omega^6 & \omega^3 & \omega^{12} & \omega^6 & 1 & \omega^9 & \omega^6 & 1 & \omega^9 & \omega^3 & \omega^{12} \\
+    1 & \omega^3 & \omega^6 & \omega^{9} & \omega^{12} & \omega^6 & \omega^{9} & \omega^{12} & 1 & \omega^3 & \omega^{12} & 1 & \omega^3 & \omega^6 & \omega^{9} \\
+    1 & \omega^6 & \omega^{12} & \omega^{3} & \omega^{9} & \omega^7 & \omega^{13} & \omega^{4} & \omega^{10} & \omega & \omega^{14} & \omega^5 & \omega^{11} & \omega^2 & \omega^{8} \\
+    1 & \omega^{12} & \omega^9 & \omega^{6} & \omega^{3} & \omega^9 & \omega^{6} & \omega^{3} & 1 & \omega^{12} & \omega^{3} & 1 & \omega^{12} & \omega^9 & \omega^{6} \\
+    1 & \omega^{3} & \omega^{6} & \omega^{9} & \omega^{12} & \omega^{11} & \omega^{14} & \omega^{2} & \omega^5 & \omega^8 & \omega^{7} & \omega^{10} & \omega^{13} & \omega & \omega^{4} \\
+    1 & \omega^{6} & \omega^{12} & \omega^{3} & \omega^{9} & \omega^{12} & \omega^{3} & \omega^{9} & 1 & \omega^6 & \omega^{9} & 1 & \omega^6 & \omega^{12} & \omega^{3} \\
+    1 & \omega^9 & \omega^3 & \omega^{12} & \omega^{6} & \omega^{13} & \omega^{7} & \omega & \omega^{10} & \omega^4 & \omega^{11} & \omega^5 & \omega^{14} & \omega^8 & \omega^{2} \\
+    1 & \omega^{12} & \omega^9 & \omega^{6} & \omega^{3} & \omega^{14} & \omega^{11} & \omega^{8} & \omega^5 & \omega^2 & \omega^{13} & \omega^{10} & \omega^7 & \omega^4 & \omega \\
     \end{array}\right]
 \end{equation}
 
 \end{example}
-Here $\calD$ must avoid a subgroup of $\calG$ of order $V,$ in fact this is the maximal size subgroup that can be avoided and when this size subgroup is avoided the cardinality of $\{d\in\calD:d\equiv s\mod(S+1)\}$ is constant for all $s=1,...,S$:
+For a harmonic ETF to be a disjoint union of simplices, $\calD$ must avoid a subgroup of $\calG$ of order $V.$ In fact, this is the maximal size subgroup that can be avoided and when this size subgroup is avoided the cardinality of $\calD\cap(g+\calH)$ is constant for all nonzero $g\in\calG$:
 
 %Define \begin{equation}
 %\label{eq: S formula}
